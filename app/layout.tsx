@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Shamil Vm',
-  description: 'Your bio or descriptionShamil Vm — Full-Stack Developer turning ideas into powerful web applications. Explore my projects, skills, and experience in building modern, scalable solutions.',
+  description: 'Shamil Vm — Full-Stack Developer | turning ideas into powerful web applications. Explore my projects, skills, and experience in building modern, scalable solutions.',
 }
 
 export default function RootLayout({

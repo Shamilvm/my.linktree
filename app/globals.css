@@ -33,3 +33,13 @@
   }
 }
 
+/* Hide Next.js navigation or overlay button */
+#__next-build-watcher,
+#__next-route-announcer,
+[data-nextjs-dialog],
+[data-nextjs-toast],
+[data-nextjs-overlay],
+.nextjs-container,
+#__next {
+  display: none !important;
+}

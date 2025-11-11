@@ -1,27 +1,35 @@
 'use client'
 
+import Image from 'next/image'
 import LinkButton from '@/components/LinkButton'
 import SocialIcons from '@/components/SocialIcons'
 import { links } from '@/data/links'
+import profile from '@/assets/shaaa.jpg'
 
 export default function Home() {
+  // Get social media links from the links data
+  const socialMediaLinks = links.find(section => section.id === 'social-media')?.items || []
+
   return (
     <main className="min-h-screen bg-black pb-16">
       <div className="mx-auto w-full max-w-md px-5 pt-12 sm:pt-20">
         {/* Profile Section */}
         <div className="mb-12 flex flex-col items-center">
           <div className="mb-5 h-28 w-28 overflow-hidden rounded-full border-2 border-white/20 shadow-lg transition-all duration-500 ease-out hover:scale-105 hover:border-white/30 hover:shadow-xl sm:h-32 sm:w-32">
-            <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop&crop=face"
-              alt="Profile"
+            <Image
+              src={profile}
+              alt="Shamil Vm"
+              width={128}
+              height={128}
               className="h-full w-full object-cover"
+              priority
             />
           </div>
           <h1 className="mb-3 text-2xl font-bold text-white sm:text-3xl">
-            Your Name
+            Shamil Vm
           </h1>
           <p className="max-w-sm text-center text-sm leading-relaxed text-gray-400 sm:text-base">
-            Your bio or description goes here
+            Full-Stack Developer | Turning ideas into Experience
           </p>
         </div>
 
@@ -36,9 +44,9 @@ export default function Home() {
                 animationFillMode: 'both',
               }}
             >
-              <h2 className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-500">
+              {/* <h2 className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-500">
                 {section.title}
-              </h2>
+              </h2> */}
               <div className="space-y-3">
                 {section.items.map((link, linkIndex) => (
                   <div
@@ -65,7 +73,7 @@ export default function Home() {
             animationFillMode: 'both',
           }}
         >
-          <SocialIcons />
+          <SocialIcons links={socialMediaLinks} />
         </div>
       </div>
     </main>

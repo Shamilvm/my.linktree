@@ -1,17 +1,18 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import LinkButton from '@/components/LinkButton'
-import SocialIcons from '@/components/SocialIcons'
-import { links } from '@/data/links'
-import profile from '@/assets/shaaa.jpg'
+import Image from "next/image";
+import LinkButton from "@/components/LinkButton";
+import SocialIcons from "@/components/SocialIcons";
+import { links } from "@/data/links";
+import profile from "@/assets/shaaa.jpg";
 
 export default function Home() {
   // Get social media links from the links data
-  const socialMediaLinks = links.find(section => section.id === 'social-media')?.items || []
+  const socialMediaLinks =
+    links.find((section) => section.id === "social-media")?.items || [];
 
   return (
-    <main className="min-h-screen bg-black pb-16">
+    <main className="min-h-screen bg-black pb-4">
       <div className="mx-auto w-full max-w-md px-5 pt-12 sm:pt-20">
         {/* Profile Section */}
         <div className="mb-12 flex flex-col items-center">
@@ -36,12 +37,12 @@ export default function Home() {
         {/* Link Tree Style Buttons */}
         <div className="space-y-10">
           {links.map((section, sectionIndex) => (
-            <div 
-              key={section.id} 
+            <div
+              key={section.id}
               className="space-y-4 animate-fadeInUp"
-              style={{ 
+              style={{
                 animationDelay: `${sectionIndex * 0.1}s`,
-                animationFillMode: 'both',
+                animationFillMode: "both",
               }}
             >
               {/* <h2 className="text-center text-xs font-semibold uppercase tracking-[0.15em] text-gray-500">
@@ -52,9 +53,11 @@ export default function Home() {
                   <div
                     key={link.id}
                     className="animate-fadeInUp"
-                    style={{ 
-                      animationDelay: `${(sectionIndex * 0.1) + (linkIndex * 0.05) + 0.3}s`,
-                      animationFillMode: 'both',
+                    style={{
+                      animationDelay: `${
+                        sectionIndex * 0.1 + linkIndex * 0.05 + 0.3
+                      }s`,
+                      animationFillMode: "both",
                     }}
                   >
                     <LinkButton {...link} />
@@ -66,17 +69,21 @@ export default function Home() {
         </div>
 
         {/* Social Icons */}
-        <div 
+        <div
           className="mt-14 animate-fadeInUp"
-          style={{ 
-            animationDelay: '0.8s',
-            animationFillMode: 'both',
+          style={{
+            animationDelay: "0.8s",
+            animationFillMode: "both",
           }}
         >
           <SocialIcons links={socialMediaLinks} />
         </div>
+
+        {/* Copyright */}
+        <div className="text-white flex gap-2 text-sm justify-center pt-10">
+          <p>© 2025 Shamil Vm. All rights reserved.</p>
+        </div>
       </div>
     </main>
-  )
+  );
 }
-

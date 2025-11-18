@@ -79,7 +79,6 @@ export default function LinkButton({
   return (
     <a
       href={url}
-      target="_blank"
       rel="noopener noreferrer"
       className="group relative flex items-center gap-3 rounded-2xl bg-[#1a1a1a] border border-white/10 px-4 py-3.5 text-white shadow-sm transition-all duration-300 ease-out hover:scale-[1.01] hover:border-white/20 hover:shadow-lg active:scale-[0.99] sm:px-5 sm:py-4"
       onMouseEnter={() => setIsHovered(true)}

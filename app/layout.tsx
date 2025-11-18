@@ -3,6 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Shamil Vm',
+  icons: '/assets/shamil_logo.png',
   description: 'Shamil Vm — Full-Stack Developer | turning ideas into powerful web applications. Explore my projects, skills, and experience in building modern, scalable solutions.',
 }
 

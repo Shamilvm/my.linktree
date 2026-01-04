@@ -7,13 +7,14 @@ import { links } from "@/data/links";
 import profile from "@/assets/shaaa.jpg";
 
 export default function Home() {
+  const currentYear = new Date().getFullYear();
   // Get social media links from the links data
   const socialMediaLinks =
     links.find((section) => section.id === "social-media")?.items || [];
 
-  return (
-    <main className="min-h-screen bg-black pb-4">
-      <div className="mx-auto w-full max-w-md px-5 pt-12 sm:pt-20">
+  return (  
+    <main className="h-screen bg-black">
+      <div className="mx-auto w-full flex flex-col justify-between max-w-md px-5 pt-12 sm:pt-20">
         {/* Profile Section */}
         <div className="mb-12 flex flex-col items-center">
           <div className="mb-5 h-28 w-28 overflow-hidden rounded-full border-2 border-white/20 shadow-lg transition-all duration-500 ease-out hover:scale-105 hover:border-white/30 hover:shadow-xl sm:h-32 sm:w-32">
@@ -70,7 +71,7 @@ export default function Home() {
 
         {/* Social Icons */}
         <div
-          className="mt-14 animate-fadeInUp"
+          className="pt-12 animate-fadeInUp"
           style={{
             animationDelay: "0.8s",
             animationFillMode: "both",
@@ -80,8 +81,8 @@ export default function Home() {
         </div>
 
         {/* Copyright */}
-        <div className="text-white flex gap-2 text-sm justify-center pt-10">
-          <p>© 2025 Shamil Vm. All rights reserved.</p>
+        <div className="text-white flex gap-2 text-sm justify-center items-end pt-8">
+          <p>© {currentYear} Shamil Vm. All rights reserved.</p>
         </div>
       </div>
     </main>
